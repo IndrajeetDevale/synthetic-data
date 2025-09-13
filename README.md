@@ -29,3 +29,12 @@ git clone https://github.com/IndrajeetDevale/synthetic-data-poc
 cd synthetic-data-poc
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+
+---
+
+## AWS Configuration
+```bash
+export AWS_PROFILE=<your-profile>
+export AWS_REGION=us-east-1
+export BEDROCK_MODEL_ID=anthropic.claude-3-haiku-20240307-v1:0
+
