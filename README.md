@@ -29,7 +29,7 @@ git clone https://github.com/IndrajeetDevale/synthetic-data-poc
 cd synthetic-data-poc
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-
+```
 ---
 
 ## AWS Configuration
@@ -37,4 +37,27 @@ pip install -r requirements.txt
 export AWS_PROFILE=<your-profile>
 export AWS_REGION=us-east-1
 export BEDROCK_MODEL_ID=anthropic.claude-3-haiku-20240307-v1:0
+```
+---
+
+## Example Workflow
+
+1. Upload input to S3:
+   ```bash
+   echo "This is a test input for v0.2" > input.txt
+   aws s3 cp input.txt s3://<your-bucket>/poc/input/input.txt
+  ```
+
+2. Run the Script
+```bash
+python3 src/main.py \
+  s3://<your-bucket>/poc/input/input.txt \
+  s3://<your-bucket>/poc/output/output.txt
+
+```
+
+3. Check the output
+```bash
+aws s3 cp s3://<your-bucket>/poc/output/output.txt -
+```
 
