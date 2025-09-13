@@ -1,1 +1,1 @@
-Hello from Indy’s Bedrock POC v0.1
+This is a test input for Indy’s v0.2
